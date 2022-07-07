@@ -1,0 +1,2 @@
+concat:
+	ffmpeg -f concat -safe 0 -i videos.txt -c copy Expo1Completo.mp4
