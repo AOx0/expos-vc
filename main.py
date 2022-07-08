@@ -1083,4 +1083,44 @@ class Expo2_1A(Scene):
         self.play(Write(gen7))
         self.wait(1)
 
+        gen7 = VGroup(
+            MathTex(
+                r"""T(x,y,z) = \frac{50\sqrt{6}}{  \sqrt{x^2 + y^2 + z^2}}"""
+            )
+        )
+
+        self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(1)
+
+        gen7 = VGroup(
+            MathTex(
+                r"""T(4,0,3) = \frac{50\sqrt{6}}{  \sqrt{4^2 + 0^2 + 3^2}}"""
+            )
+        )
+
+        self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(1)
+
+        gen7 = VGroup(
+            MathTex(
+                r"""T(4,0,3) = \frac{50\sqrt{6}}{  \sqrt{25}}"""
+            )
+        )
+
+        self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(1)
+
+        gen7 = VGroup(
+            MathTex(
+                r"""T(4,0,3) = 10\sqrt{6}"""
+            )
+        )
+
+        self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(1)
+
         self.play(*[FadeOut(obj) for obj in self.mobjects])
