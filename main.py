@@ -1121,6 +1121,97 @@ class Expo2_1A(Scene):
 
         self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
         self.play(Write(gen7))
+        self.wait(5)
+
+        self.play(*[FadeOut(obj) for obj in self.mobjects])
+
+
+class Expo3_1A(Scene):
+    def construct(self):
+        self: Scene
+
         self.wait(1)
+
+        text1 = MathTex(r"\text{Ejercicio 3}").shift(UP)
+        text2 = MathTex(
+            r"\text{Archivo 1A - Problema 4:3}").next_to(text1, DOWN)
+        text3 = MathTex(r"\text{Julio 2022}").next_to(text2, DOWN)
+
+        self.play(Write(text1), Write(text2), Write(text3))
+
+        self.wait(3)
+        self.play(*[FadeOut(obj) for obj in self.mobjects])
+
+        gen7 = VGroup(
+            (x1 := Text(
+                "Encontrar el dominio y rango.\n", font_size=23.0
+            ).shift(UP)),
+            MathTex(
+                r"""f(x,y) = \frac{1}{x+y}"""
+            ).next_to(x1, DOWN)
+        )
+
+        # self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(1)
+
+        gen7 = VGroup(
+            (x1 := Text(
+                "Restriccion: \n", font_size=23.0
+            ).shift(UP)),
+            MathTex(
+                r"""x+y \neq 0"""
+            ).next_to(x1, DOWN)
+        )
+
+        self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(1)
+
+        gen7 = VGroup(
+            MathTex(
+                r"""x \neq - y"""
+            )
+        )
+
+        gen7 = VGroup(
+            (x1 := Text(
+                "El dominio es\n", font_size=23.0
+            ).shift(UP)),
+            MathTex(
+                r"""\{(x,y) \in \mathbb{R} \, | \, x \neq -y\}"""
+            ).next_to(x1, DOWN)
+        )
+
+        self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(5)
+
+        gen7 = VGroup(
+            (x1 := Text(
+                "Debido a la indeterminación, la imagen abarca los numeros reales menos 0\n", font_size=23.0
+            ).shift(UP)),
+            MathTex(
+                r"""\{z \in \mathbb{R}\, | \, z \neq 0\}"""
+            ).next_to(x1, DOWN)
+        )
+
+        self.play(*[obj.animate.shift(UP * 2) for obj in self.mobjects])
+        self.play(Write(gen7))
+        self.wait(5)
+
+        self.play(*[FadeOut(obj) for obj in self.mobjects])
+
+
+class Intro(Scene):
+    def construct(self):
+        self: Scene
+
+        corona = ImageMobject("./Intro2.png")
+        corona.scale(0.9)
+
+        self.play(FadeIn(corona))
+
+        self.wait(10)
 
         self.play(*[FadeOut(obj) for obj in self.mobjects])
